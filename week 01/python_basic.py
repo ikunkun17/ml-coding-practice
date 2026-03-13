@@ -244,26 +244,26 @@ s2.add(7)
 print(s2)
 
 # 원소 여러 개 추가
-s2.update([6, 7, 8, 9, 10])
+s2.update([7, 8, 9, 10, 11])
 print(s2)
 
 # 특정 원소 제거
-s2.remove(7)
+s2.remove(8)
 print(s2)
 
-s2 = set([1, 2, 3, 4, 5, 6, 3, 1, 6])
+s2 = set([2, 4, 5, 6, 2, 4, 2, 3, 5])
 print(s2)
 
 # 비교 연산자
-x = 3
-y = 2
+x = 4
+y = 3
 print(x == y)
 print(x != y)
 print(x >= y)
 
 # 조건의 연결
-money = 1300
-if money >= 1200 and money < 3500:
+money = 1500
+if money >= 1300 and money < 4500:
   print('버스를 탈 수 있습니다.')
 
 # 그룹 자료형의 원소인지 검사하기
