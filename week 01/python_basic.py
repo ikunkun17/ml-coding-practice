@@ -3,7 +3,7 @@ b = 7
 
 # 지수승
 print(a ** b)
-print(a ** 3)
+print(a ** 4)
 
 # 나머지 연산
 print(a % b)
