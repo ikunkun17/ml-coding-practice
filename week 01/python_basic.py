@@ -36,13 +36,13 @@ print(a[-2])
 print(a[-3])
 
 # 문자열 슬라이싱
-b = a[0] + a[1] + a[2]
+b = a[1] + a[2] + a[3]
 print(b)
 
-print(a[4:6])
-print(a[19:])
-print(a[:3])
-print(a[7:-11])
+print(a[5:6])
+print(a[18:])
+print(a[:4])
+print(a[6:-12])
 
 # 문자 개수 계산
 a = "Python"
