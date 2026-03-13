@@ -282,17 +282,17 @@ else:
 """# 4. 반복문"""
 
 # for 반복문1
-test_list = ['one', 'two', 'three']
-for i in test_list:
-  x = i + '!'
+test_list = ['five', 'six', 'seven']
+for b in test_list:
+  x = b + '?'
   print(x)
 
 # for 반복문2
 number = 0
-for score in [90, 25, 67, 45, 93]:
+for score in [80, 37, 54, 60, 85]:
   number += 1
 
-  if score > 60:
+  if score > 70:
     print("%d번 학생은 합격입니다." % number)
   else:
     print("%d번 학생은 불합격입니다." % number)
