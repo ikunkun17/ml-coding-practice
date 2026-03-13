@@ -11,13 +11,13 @@ print(7 % 3)
 
 # 나눗셈 몫 구하기
 print(a // b)
-print(7 // 3)
+print(6 // 4)
 
-s1 = 'Hello Python'
+s1 = 'Bye Phython'
 print(s1)
 
-s3 = '''Hello 
-Python'''
+s3 = '''Bye 
+Phython'''
 print(s3)
 
 head = "Python"
