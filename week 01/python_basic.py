@@ -13,27 +13,27 @@ print(7 % 3)
 print(a // b)
 print(6 // 4)
 
-s1 = 'Bye Phython'
+s1 = 'Bye Python'
 print(s1)
 
 s3 = '''Bye 
-Phython'''
+Python'''
 print(s3)
 
-head = "Python"
-tail = " is fun"
+head = "I"
+tail = "am happy"
 print(head + tail)
 
 # 문자열 곱하기
-print(head * 2)
-print("=" * 5)
+print(head * 3)
+print("=" * 6)
 
 # 문자열 인덱싱
-a = "Now is better than never"
-print(a[0])
-print(a[4])
-print(a[-1])
+a = "Today is a gift"
+print(a[1])
+print(a[3])
 print(a[-2])
+print(a[-3])
 
 # 문자열 슬라이싱
 b = a[0] + a[1] + a[2]
