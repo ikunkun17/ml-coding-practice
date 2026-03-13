@@ -183,10 +183,10 @@ t2 * 7
 dic = {'Name':'Lee', 'phnum':'01023456789', 'Birth':'0117'}
 
 # 원소 추가
-dic[1] = 'a'
+dic[2] = 'b'
 print(dic)
 
-dic['pet'] = 'dog'
+dic['pet'] = 'cat'
 print(dic)
 
 # 원소 삭제
@@ -194,8 +194,8 @@ del dic[1]
 print(dic)
 
 # 원소의 value 구하기
-print(dic['phone'])
-print(dic['name'])
+print(dic['phnum'])
+print(dic['Name'])
 
 # key의 리스트 만들기
 print(dic.keys())
