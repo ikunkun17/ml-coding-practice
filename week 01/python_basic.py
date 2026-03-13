@@ -366,20 +366,20 @@ print(type(a))
 # 간단한 삽입형 함수 생성
 sum = lambda a, b: a + b
 
-print(sum(3, 5))
+print(sum(6, 7))
 
 # 최대, 최소값 반환
-print(max([1, 4, 2, 8, 6]))
-print(max("Python"))
+print(max([2, 5, 4, 7, 8]))
+print(max("World"))
 
-print(min([1, 4, 2, 8, 6]))
-print(min("Python"))
+print(min([2, 5, 4, 7, 8]))
+print(min("World"))
 
 # x의 y제곱 결과값 반환
-print(pow(2, 4))
+print(pow(3, 5))
 
 # 사용자 입력으로 받은 값을 문자열로 반환1
-c = input("값을 입력해주세요:")
+c = input("값을 입력하세요:")
 print(c)
 
 # 사용자 입력으로 받은 값을 문자열로 반환2
