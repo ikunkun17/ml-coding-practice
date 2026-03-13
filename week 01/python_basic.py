@@ -45,18 +45,18 @@ print(a[:4])
 print(a[6:-12])
 
 # 문자 개수 계산
-a = "Python"
-print(a.count('p'))
+a = "World"
+print(a.count('d'))
 
 # 문자 위치 확인
-print(a.find('y'))
-print(a.find('p'))
-print(a.index('y'))
+print(a.find('o'))
+print(a.find('r'))
+print(a.index('l'))
 # print(a.index('p')) # 오류 발생
 
 # 문자 삽입
-b = ","
-c = b.join('Abcd')
+b = "."
+c = b.join('DEFG')
 print(c)
 
 # 대소문자 변환
@@ -64,32 +64,32 @@ print(a.upper())
 print(a.lower())
 
 # 공백 제거
-d = "              py           "
+d = "              ly           "
 print(d.lstrip())
 print(d.rstrip())
 print(d.strip())
 
 # 문자열 수정 (불가능)
-a = "Pithon"
+a = "Wirld"
 # a[1] = 'y'    # 오류 발생
 
 # 문자열 바꾸기
-a = "Python is difficult."
-print(a.replace("difficult", "funny"))
+a = "Math is easy."
+print(a.replace("easy", "hard"))
 print(a)
 
 # 문자열 나누기
 print(a.split())
 
-b = "a, b, c, d"
+b = "d. e. f. g"
 print(b)
-print(b.split(','))
+print(b.split('.'))
 
 # 리스트 만들기
 a = [1, 2, 3]
-b = ['Life', 'is', 'too', 'short']
-c = [1, 2, 'Life', 'is']
-d = [1, 2, [3, 4], ['Life', 'is']]
+b = ['Work', 'is', 'too', 'hard']
+c = [1, 2, 'Work', 'is']
+d = [1, 2, [3, 4], ['Work', 'is']]
 
 # 리스트 인덱싱
 print(d[0])
