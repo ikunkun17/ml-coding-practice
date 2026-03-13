@@ -1,5 +1,5 @@
-a = 3
-b = 4
+a = 5
+b = 6
 
 # 지수승
 print(a ** b)
@@ -7,36 +7,36 @@ print(a ** 3)
 
 # 나머지 연산
 print(a % b)
-print(7 % 3)
+print(8 % 6)
 
 # 나눗셈 몫 구하기
 print(a // b)
-print(7 // 3)
+print(5 // 2)
 
-s1 = 'Hello Python'
+s1 = 'Bye Phython'
 print(s1)
 
-s3 = '''Hello 
-Python'''
+s3 = '''Bye 
+Phython'''
 print(s3)
 
-head = "Python"
-tail = " is fun"
+head = "I"
+tail = " am happy"
 print(head + tail)
 
 # 문자열 곱하기
-print(head * 2)
-print("=" * 5)
+print(head * 3)
+print("=" * 6)
 
 # 문자열 인덱싱
-a = "Now is better than never"
-print(a[0])
-print(a[4])
+a = "Today is a gift"
+print(a[3])
+print(a[5])
 print(a[-1])
 print(a[-2])
 
 # 문자열 슬라이싱
-b = a[0] + a[1] + a[2]
+b = a[1] + a[2] + a[3]
 print(b)
 
 print(a[4:6])
