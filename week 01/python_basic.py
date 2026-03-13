@@ -387,19 +387,19 @@ c = input("정수를 입력하세요: ")
 print(c)
 
 # 입력 받은 숫자에 해당되는 범위의 값을 반환
-print(range(5))
-print(list(range(5)))
-print(list(range(5, 10)))
-print(list(range(5, 10, 2)))
+print(range(7))
+print(list(range(6)))
+print(list(range(7, 21)))
+print(list(range(7, 21, 3)))
 
-for i in range(5, 20, 3):
+for i in range(5, 21, 3):
   print(i)
 
 # 입력값 s의 길이를 반환
-len('Python')
+len('World')
 
-print(sorted([3, 0, 2, 1]))
-print(sorted('Python'))
+print(sorted([4, 1, 3, 2]))
+print(sorted('World'))
 
 # 패키지, 모듈 사용
 # Request('http://www.sunmoon.ac.kr')   # 오류 발생
@@ -422,14 +422,14 @@ f.close()
 
 # 파일 쓰기
 f = open('example.txt', 'w')
-for i in range(1, 6):
+for i in range(2, 5):
   data = '%d번째 줄입니다. \n' % i
   f.write(data)
 f.close()
 
 # 파일에 내용 추가하기
 f = open('example.txt', 'w')
-for i in range(6, 11):
+for i in range(7, 12):
   data = '%d번째 줄 추가입니다. \n' % i
   f.write(data)
 f.close()
