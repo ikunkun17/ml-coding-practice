@@ -92,37 +92,37 @@ c = [1, 2, 'Work', 'is']
 d = [1, 2, [3, 4], ['Work', 'is']]
 
 # 리스트 인덱싱
-print(d[0])
-print(d[2])
-print(d[3][-1])
+print(d[1])
+print(d[3])
+print(d[4][-2])
 
 # 리스트 슬라이싱
-print(d[0:3])
+print(d[1:4])
 
 # 리스트 연결
 print(a + b)
-print(b[0] + " hi~ ^^;")
+print(b[0] + " bye~ ^^;")
 # print(a[0] + " hi~ ^^;")    # 오류 발생
 
 # 리스트 반복
-print(a * 3)
+print(a * 4)
 
 # 리스트 수정
-a[2] = 99
+a[2] = 88
 print(a)
 
-a[1:2] = ['a', 'b', 'c']
+a[2:3] = ['d', 'e', 'f']
 print(a)
 
-a[-1] = ['d', 'e', 'f']
+a[-2] = ['g', 'h', 'i']
 print(a)
 
 # 삭제
-del a[-1]
+del a[-2]
 print(a)
 
 # 원소 추가
-a.append(5)
+a.append(6)
 print(a)
 
 # 원소 정렬
