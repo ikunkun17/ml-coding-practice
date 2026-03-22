@@ -68,7 +68,7 @@ data = {
     'name': ['Ally', 'Brian', 'Charles', 'Dawin', 'Eve', 'Frankey', 'Gloria', 'Johan'],
     'comment_length': [200, 250, 100, 200, 150, 170, 55, 155],
     'likes': [40, 20, 30, 55, 10, 45, 7, 29],
-    'is_spam': [False, False, True, False, False, True, False, False],
+    'is_spam': [True, False, False, False, False, True, False, False],
     'has_image': [True, False, True, True, False, False, True, True]
 }
 df = pd.DataFrame(data)
