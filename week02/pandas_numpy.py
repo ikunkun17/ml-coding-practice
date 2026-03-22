@@ -178,10 +178,10 @@ print(sample_df.columns)            # 기존 프레임워크에서 컬럼명 가
 print(pd.DataFrame(sample_np, columns = sample_df.columns))      # 새 프레임워크에 컬럼명 붙이기
 
 print(sample_np)
-print(sample_np[0])
-print(sample_np[0,2])
-print(sample_np[0:3,2:4])
-print(sample_np[:,2])
+print(sample_np[2])
+print(sample_np[2,3])
+print(sample_np[2:4,3:5])
+print(sample_np[:,3])
 
 np_a = np.array([[1,3], [0,-2]])
 print(np_a)
