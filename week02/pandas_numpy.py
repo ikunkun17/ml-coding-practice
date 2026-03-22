@@ -130,10 +130,10 @@ print(result)
 
 # 예제 데이터 생성
 data = {
-    'name': ['Alice', 'Bob', 'Charlie', 'David', 'Eve'],
-    'math': [88, 92, 85, 95, 90],
-    'science': [80, 85, 88, 92, 85],
-    'english': [90, 87, 85, 88, 92]
+    'name': ['Ally', 'David', 'Charles', 'Isaac', 'Evan'],
+    'math': [87, 90, 87, 67, 96],
+    'science': [84, 86, 85, 94, 87],
+    'english': [92, 84, 83, 82, 95]
 }
 
 # Dataframe 생성
