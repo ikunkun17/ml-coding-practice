@@ -151,23 +151,23 @@ print(average_df)
 # 2.2 넘파이
 import numpy as np
 
-print(np.array([1,2,3]))
+print(np.array([2,3,4]))
 
-print(np.array([[1,2,3],
-                [4,5,6],
-                [7,8,9]]))
+print(np.array([[2,3,4],
+                [5,6,7],
+                [8,9,10]]))
 
-print(np.array([[[1,2,3],
-                [4,5,6],
-                [7,8,9]],
-                [[1,2,3],
-                [4,5,6],
-                [7,8,9]],
-                [[1,2,3],
-                [4,5,6],
-                [7,8,9]]]))
+print(np.array([[[2,3,4],
+                [5,6,7],
+                [8,9,10]],
+                [[2,3,4],
+                [5,6,7],
+                [8,9,10]],
+                [[2,3,4],
+                [5,6,7],
+                [8,9,10]]]))
 
-print(np.array([1,2,3,4,5]))
+print(np.array([2,3,4,5,6]))
 print(np.array(sample_df))
 
 sample_np = np.array(sample_df)
