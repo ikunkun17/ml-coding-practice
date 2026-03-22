@@ -183,7 +183,7 @@ print(sample_np[2,3])
 print(sample_np[2:4,3:5])
 print(sample_np[:,3])
 
-np_a = np.array([[1,3], [0,-2]])
+np_a = np.array([[2,3], [1,-3]])
 print(np_a)
 print(np_a + 10)
 print(np_a - 5)
