@@ -203,11 +203,11 @@ print(np.random.randint(51, 72, 12))
 print(np.random.choice(['red', 'green','white','black','blue'],size=3))
 print(np.random.choice(['red', 'green','white','black','blue'],size=3, replace=False))
 
-print(np.arange(1,11))
-print(np.arange(1,11,2))
-print(np.linspace(1,100,10))       # 1부터 10까지 균등한 간격의 값을 4개 추출
+print(np.arange(1,12))
+print(np.arange(1,12,3))
+print(np.linspace(1,10,4))       # 1부터 10까지 균등한 간격의 값을 4개 추출
 
-A = np.array([4, 16, 25])
+A = np.array([9, 36, 49])
 print(np.sqrt(A))
 
 print(np.arange(8).reshape(2, 4) + 10)
