@@ -15,7 +15,7 @@ a = pd.DataFrame(sample_dic)
 a.info()
 
 pd.DataFrame([[2,3],[4,5],[6,7],[8,9]])
-pd.DataFrame([[2,3],[4,5],[6,7],[8,9]], columns = ['var_2','var_3'], index=['a','b','c','d'])
+pd.DataFrame([[2,3],[4,5],[6,7],[8,9]], columns = ['var_2','var_3'], index=['b','c','d','e'])
 
 import pandas as pd
 file_url = 'https://media.githubusercontent.com/media/musthave-ML10/data_source/main/sample_df.csv'
