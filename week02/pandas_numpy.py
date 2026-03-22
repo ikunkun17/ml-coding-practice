@@ -117,7 +117,7 @@ print(iris['class'].value_counts())
 data = {
     'name': ['Ally', 'Johan', 'Charles', 'Isaac', 'Ellis'],
     'age': [30, 35, 40, 27, 45],
-    'salary': [70000.00, 80000.00, 90000.00, 60000.00, 95000.00]
+    'salary': [80000.00, 90000.00, 60000.00, 50000.00, 85000.00]
 }
 
 # Dataframe 생성
@@ -125,7 +125,7 @@ df = pd.DataFrame(data)
 print(df.head())
 
 # 나이가 30 이상인 직원의 이름과 급여 반환
-result = df[df['age'] >= 30][['name', 'salary']]
+result = df[df['age'] >= 40][['name', 'salary']]
 print(result)
 
 # 예제 데이터 생성
