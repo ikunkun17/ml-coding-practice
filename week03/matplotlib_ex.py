@@ -303,11 +303,11 @@ plt.legend(loc='upper right')
 
 # 두 번째 서브플롯 설정(막대 그래프)
 plt.subplot(2, 1, 2)
-plt.bar(x, y2, color='deepred', alpha=0.8, width=0.8, label='Survived')
+plt.bar(x, y2, color='crimson', alpha=0.8, width=0.8, label='Survived')
 plt.xlabel('Parch')
-plt.ylabel('Survived Count', color='deepred')
-plt.tick_params(axis='y', labelcolor='deepred')
-plt.legend(loc='upper right')
+plt.ylabel('Survived Count', color='crimson')
+plt.tick_params(axis='y', labelcolor='crimson')
+plt.legend(loc='lower right')
 
 # 제목 설정
 plt.suptitle('Survival Analysis by Number of Parents/Children (Parch) on the Titanic')
