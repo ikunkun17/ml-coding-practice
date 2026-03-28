@@ -378,20 +378,20 @@ y2 = parch_counts[1].values # 생존자
 fig, ax1 = plt.subplots()
 
 # 첫 번째 그래프 설정 (선 그래프)
-ax1.plot(x, y1, '-s', color='indigo', markersize=7, linewidth=5, alpha=0.7, label='Not Survived')
+ax1.plot(x, y1, '-s', color='blue', markersize=7, linewidth=5, alpha=0.7, label='Not Survived')
 ax1.set_xlabel('Parch') # x축의 레이블
-ax1.set_ylabel('Not Survived Count', color='indigo') # y축의 레이블
-ax1.tick_params(axis='y', labelcolor='indigo') # 눈금의 모양과 속성
-ax1.legend(loc='upper right', bbox_to_anchor=(1, 1)) # 범례
+ax1.set_ylabel('Not Survived Count', color='blue') # y축의 레이블
+ax1.tick_params(axis='y', labelcolor='blue') # 눈금의 모양과 속성
+ax1.legend(loc='lower right', bbox_to_anchor=(1, 1)) # 범례
 
 # .twinx() 함수를 사용하여 두 번째 그래프와 축을 공유하는 새로운 Axes 객체 생성
 ax2 = ax1.twinx()
 
 # 두 번째 그래프 설정 (막대 그래프)
-ax2.bar(x, y2, color='deeppink', alpha=0.7, width=0.7, label='Survived')
-ax2.set_ylabel('Survived Count', color='deeppink') # 서브플롯 y축에 레이블 추가
-ax2.tick_params(axis='y', labelcolor='deeppink')
-ax2.legend(loc='upper right', bbox_to_anchor=(1, 0.9))
+ax2.bar(x, y2, color='crimson', alpha=0.8, width=0.8, label='Survived')
+ax2.set_ylabel('Survived Count', color='crimson') # 서브플롯 y축에 레이블 추가
+ax2.tick_params(axis='y', labelcolor='crimson')
+ax2.legend(loc='upper right', bbox_to_anchor=(1, 0.8))
 
 plt.suptitle('Survival Analysis by Number of Parents/Children (Parch) on the Titanic')
 plt.tight_layout()
