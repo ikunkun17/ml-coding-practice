@@ -88,7 +88,7 @@ titanic = titanic.dropna(subset=['Age', 'Fare', 'Survived'])
 print(titanic.info())
 
 # 산점도 그래프 그리기
-plt.figure(figsize=(12, 8))
+plt.figure(figsize=(13, 9))
 scatter = plt.scatter(x='Age', y='Fare', data=titanic, c=titanic['Survived'],cmap='Set2', alpha=0.7)
 
 plt.title('Age and Fare Relationship with Survival on the Titanic')
