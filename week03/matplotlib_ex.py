@@ -212,7 +212,7 @@ titanic['Age'] = titanic['Age'].fillna(titanic['Age'].mean())
 print(titanic.info())
 
 # 바이올린 플롯 그리기
-plt.figure(figsize=(10, 6))
+plt.figure(figsize=(12, 8))
 
 # showmeans=False는 평균값을 표시하지 않도록 하고, showmedians=True는 중앙값을 표시하도록 함
 violin_plot = plt.violinplot([titanic[titanic['Pclass'] == 1]['Age'],
@@ -245,7 +245,7 @@ print(fare_std)
 """* 에러바는 데이터의 표준 편차를 나타내는 경우에는 길이가 길수록 해당 그룹의 데이터가 퍼져 있음을 의미"""
 
 # 에러바로 요금의 평균과 표준 편차 표현
-plt.figure(figsize=(10, 6))
+plt.figure(figsize=(12, 8))
 
 # 에러바 생성
 plt.errorbar(fare_means.index, fare_means, yerr=fare_std, fmt='o',
