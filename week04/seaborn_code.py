@@ -54,12 +54,12 @@ ax1 = fig.add_subplot(2, 3, 2)
 ax2 = fig.add_subplot(2, 3, 5)
 
 # 산점도에 선형 회귀선 표시(fit_reg=True)
-sns.regplot(x='total_bill', y='tip', data=tips, color='brown', scatter_kws={'s': 50, 'alpha': 0.5}, line_kws={'linestyle': '--'}, ax=ax1)
+sns.regplot(x='total_bill', y='tip', data=tips, color='brown', scatter_kws={'s': 50, 'alpha': 0.6}, line_kws={'linestyle': '--'}, ax=ax1)
 
 # 산점도에 선형 회귀선 미표시(fit_reg=False)
-sns.regplot(x='total_bill', y='tip', data=tips, color='brown', scatter_kws={'s': 50, 'alpha': 0.5}, line_kws={'linestyle': '--'}, ax=ax2, fit_reg=False)
+sns.regplot(x='total_bill', y='tip', data=tips, color='brown', scatter_kws={'s': 50, 'alpha': 0.6}, line_kws={'linestyle': '--'}, ax=ax2, fit_reg=False)
 
-fig.suptitle('Scatter Plots with Regression Lines', fontsize=16)
+fig.suptitle('Scatter Plots with Regression Lines', fontsize=15)
 ax1.set_title('fit_reg = True')
 ax2.set_title('fit_reg = False')
 plt.savefig('./week04/Seaborn_Figure03.jpg')
