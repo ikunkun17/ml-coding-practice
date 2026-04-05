@@ -43,15 +43,15 @@ sns.countplot(x='time', data=tips, ax=ax1)
 # x축 변수, hue로 색상 분류, 데이터 셋, 색상 설정, axe 객체(2번째 그래프)
 sns.countplot(x='time', hue='day', data=tips, palette='Set2', ax=ax2)
 
-ax1.set_title('Frequency of Tips by Time')
-ax2.set_title('Frequency of Tips by Time and Day')
+ax1.set_title('Frequency of tips by Time')
+ax2.set_title('Frequency of tips by Time and Day')
 plt.savefig('./week04/Seaborn_Figure02.jpg')
 
 # **선형 회귀선 있는 산점도**
 # figure에 2개의 서브 플롯을 생성
-fig = plt.figure(figsize=(15, 5))
-ax1 = fig.add_subplot(1, 2, 1)
-ax2 = fig.add_subplot(1, 2, 2)
+fig = plt.figure(figsize=(16, 6))
+ax1 = fig.add_subplot(2, 3, 2)
+ax2 = fig.add_subplot(2, 3, 5)
 
 # 산점도에 선형 회귀선 표시(fit_reg=True)
 sns.regplot(x='total_bill', y='tip', data=tips, color='blue', scatter_kws={'s': 50, 'alpha': 0.5}, line_kws={'linestyle': '--'}, ax=ax1)
