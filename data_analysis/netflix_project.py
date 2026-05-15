@@ -186,7 +186,7 @@ cmap = plt.matplotlib.colors.LinearSegmentedColormap.from_list('', ['#221f1f','#
 sns.heatmap(netflix_age_country_unstack, cmap = cmap, linewidth=2.5, annot=True, fmt='.0%')
 
 plt.suptitle('Target ages proportion of total content by country',
-             fontweight='bold', fontfamily='serif', fontsize=15)
+             fontweight='bold', fontfamily='serif', fontsize=14)
 plt.title('Here we see interesting differences between countries. Most shows in South Korea are targeted to adults, for instance.',
           fontsize=12, fontfamily='serif')
 plt.show()
@@ -198,7 +198,7 @@ plt.show()
 from wordcloud import WordCloud
 from PIL import Image
 
-plt.figure(figsize=(15, 5))
+plt.figure(figsize=(17, 7))
 
 # wordcolud에서 작동할 수 있도록 데이터프레임을 list로 1차 변환시키고 str(문자열)로 2차 변환
 text = str(list(netflix['description']))
