@@ -73,7 +73,7 @@ X_new = np.linspace(-3, 3, 100).reshape(100, 1)
 X_new_poly = poly_features.transform(X_new)
 y_new = lin_reg.predict(X_new_poly)
 
-plt.figure(figsize=(7, 4))
+plt.figure(figsize=(6, 4))
 plt.plot(X, y, "b.")
 plt.plot(X_new, y_new, "r-", linewidth=2, label="Predictions")
 plt.xlabel("$x_1$")
@@ -85,7 +85,7 @@ plt.show()
 
 # 릿지 회귀
 
-np.random.seed(43)
+np.random.seed(42)
 m = 20
 X = 3 * np.random.rand(m, 1)
 y = 1 + 0.5 * X + np.random.randn(m, 1) / 1.5
