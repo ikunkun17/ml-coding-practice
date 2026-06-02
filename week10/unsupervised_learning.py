@@ -11,7 +11,7 @@ plt.rc('xtick', labelsize=10)
 plt.rc('ytick', labelsize=10)
 
 # K-평균
-from sklearn.cluster import KMeans
+
 from sklearn.datasets import make_blobs
 import numpy as np
 
