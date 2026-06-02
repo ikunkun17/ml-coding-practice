@@ -1,0 +1,182 @@
+# -*- coding: utf-8 -*-
+import matplotlib.pyplot as plt
+
+plt.rc('font', family='Malgun Gothic')  # 윈도우: 맑은 고딕
+plt.rcParams['axes.unicode_minus'] = False  # 마이너스(-) 기호 깨짐 방지
+
+plt.rc('font', size=14)
+plt.rc('axes', labelsize=14, titlesize=14)
+plt.rc('legend', fontsize=14)
+plt.rc('xtick', labelsize=10)
+plt.rc('ytick', labelsize=10)
+
+# K-평균
+from sklearn.cluster import KMeans
+from sklearn.datasets import make_blobs
+import numpy as np
+
+blob_centers = np.array([[ 0.2,  2.3], [-1.5 ,  2.3], [-2.8,  2.8],
+                         [-2.8,  4.2], [-2.8,  1.0]])
+blob_std = np.array([0.4, 0.3, 0.1, 0.1, 0.1])
+X, y = make_blobs(n_samples=2000, centers=blob_centers, cluster_std=blob_std,
+                  random_state=7)
+
+k = 5
+kmeans = KMeans(n_clusters=k, n_init=10, random_state=42)
+y_pred = kmeans.fit_predict(X)
+
+def plot_clusters(X, y=None):
+    plt.scatter(X[:, 0], X[:, 1], c=y, s=1)
+    plt.xlabel("$x_1$")
+    plt.ylabel("$x_2$", rotation=0)
+
+plt.figure(figsize=(8, 4))
+plot_clusters(X)
+plt.gca().set_axisbelow(True)
+plt.grid()
+plt.show()
+
+# 각 샘플은 5개의 클러스터 중 하나에 할당
+print(y_pred)
+
+# 5개의 _센트로이드_(즉, 클러스터 중심)을 추정
+print(kmeans.cluster_centers_)
+
+print(kmeans.labels_)
+
+# 이너셔
+print(kmeans.inertia_)
+
+print(kmeans.score(X))
+
+kmeans_per_k = [KMeans(n_clusters=k, n_init=10, random_state=42).fit(X) for k in range(1, 10)]
+inertias = [model.inertia_ for model in kmeans_per_k]
+
+plt.figure(figsize=(8, 3.5))
+plt.plot(range(1, 10), inertias, "bo-")
+plt.xlabel("$k$")
+plt.ylabel("이너셔")
+plt.annotate("", xy=(5, inertias[4]), xytext=(4.45, 650), arrowprops=dict(facecolor='black', shrink=0.1))
+plt.text(4.5, 650, "엘보", horizontalalignment="center")
+plt.axis([1, 8.5, 0, 3500])
+plt.grid()
+plt.show()
+
+from sklearn.metrics import silhouette_score
+
+print(silhouette_score(X, kmeans.labels_))
+
+silhouette_scores = [silhouette_score(X, model.labels_) for model in kmeans_per_k[1:]]
+
+plt.figure(figsize=(8, 3))
+plt.plot(range(2, 10), silhouette_scores, "bo-")
+plt.xlabel("$k$")
+plt.ylabel("실루엣 점수")
+plt.axis([1.8, 8.5, 0.55, 0.8])
+plt.grid()
+plt.show()
+
+from sklearn.metrics import silhouette_samples
+from matplotlib.ticker import FixedLocator, FixedFormatter
+
+plt.figure(figsize=(11, 9))
+
+for k in (3, 4, 5, 6):
+    plt.subplot(2, 2, k - 2)
+
+    y_pred = kmeans_per_k[k - 1].labels_
+    silhouette_coefficients = silhouette_samples(X, y_pred)
+
+    padding = len(X) // 30
+    pos = padding
+    ticks = []
+    for i in range(k):
+        coeffs = silhouette_coefficients[y_pred == i]
+        coeffs.sort()
+
+        color = plt.cm.Spectral(i / k)
+        plt.fill_betweenx(np.arange(pos, pos + len(coeffs)), 0, coeffs,
+                          facecolor=color, edgecolor=color, alpha=0.7)
+        ticks.append(pos + len(coeffs) // 2)
+        pos += len(coeffs) + padding
+
+    plt.gca().yaxis.set_major_locator(FixedLocator(ticks))
+    plt.gca().yaxis.set_major_formatter(FixedFormatter(range(k)))
+    if k in (3, 5):
+        plt.ylabel("클러스터")
+
+    if k in (5, 6):
+        plt.gca().set_xticks([-0.1, 0, 0.2, 0.4, 0.6, 0.8, 1])
+        plt.xlabel("실루엣 계수")
+    else:
+        plt.tick_params(labelbottom=False)
+
+    plt.axvline(x=silhouette_scores[k - 2], color="red", linestyle="--")
+    plt.title(f"$k={k}$")
+
+plt.show()
+
+# DBSCAN
+from sklearn.cluster import DBSCAN
+from sklearn.datasets import make_moons
+
+X, y = make_moons(n_samples=1000, noise=0.05, random_state=42)
+dbscan = DBSCAN(eps=0.05, min_samples=5)
+dbscan.fit(X)
+
+print(dbscan.labels_[:10])
+
+print(dbscan.core_sample_indices_[:10])
+print(dbscan.components_)
+
+def plot_dbscan(dbscan, X, size, show_xlabels=True, show_ylabels=True):
+    core_mask = np.zeros_like(dbscan.labels_, dtype=bool)
+    core_mask[dbscan.core_sample_indices_] = True
+    anomalies_mask = dbscan.labels_ == -1
+    non_core_mask = ~(core_mask | anomalies_mask)
+
+    cores = dbscan.components_
+    anomalies = X[anomalies_mask]
+    non_cores = X[non_core_mask]
+
+    plt.scatter(cores[:, 0], cores[:, 1], c=dbscan.labels_[core_mask], marker='o', s=size, cmap="Paired")
+    plt.scatter(cores[:, 0], cores[:, 1], marker='*', s=20, c=dbscan.labels_[core_mask])
+    plt.scatter(anomalies[:, 0], anomalies[:, 1], c="r", marker="x", s=100)
+    plt.scatter(non_cores[:, 0], non_cores[:, 1], c=dbscan.labels_[non_core_mask], marker=".")
+    if show_xlabels:
+        plt.xlabel("$x_1$")
+    else:
+        plt.tick_params(labelbottom=False)
+    if show_ylabels:
+        plt.ylabel("$x_2$", rotation=0)
+    else:
+        plt.tick_params(labelleft=False)
+    plt.title(f"eps={dbscan.eps:.2f}, min_samples={dbscan.min_samples}")
+    plt.grid()
+    plt.gca().set_axisbelow(True)
+
+dbscan2 = DBSCAN(eps=0.2)
+dbscan2.fit(X)
+
+plt.figure(figsize=(9, 3.2))
+
+plt.subplot(121)
+plot_dbscan(dbscan, X, size=100)
+
+plt.subplot(122)
+plot_dbscan(dbscan2, X, size=600, show_ylabels=False)
+
+plt.show()
+
+from sklearn.neighbors import KNeighborsClassifier
+
+X, y = make_moons(n_samples=1000, noise=0.05, random_state=42)
+dbscan = DBSCAN(eps=0.2, min_samples=5)
+dbscan.fit(X)
+
+knn = KNeighborsClassifier(n_neighbors=50)
+knn.fit(dbscan.components_, dbscan.labels_[dbscan.core_sample_indices_])
+
+X_new = np.array([[-0.5, 0], [0, 0.5], [1, -0.1], [2, 1]])
+print(knn.predict(X_new))
+print(knn.predict_proba(X_new))
